@@ -49,6 +49,7 @@ namespace CacaoDuarteAPI.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     IdTipoCacao = table.Column<int>(type: "INTEGER", nullable: false),
                     IdEmpresaCompraCacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
                     Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
                     PrecioPorQuintal = table.Column<double>(type: "REAL", nullable: false)
                 },

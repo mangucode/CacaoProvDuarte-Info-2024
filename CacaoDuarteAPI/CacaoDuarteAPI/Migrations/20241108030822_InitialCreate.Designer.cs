@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CacaoDuarteAPI.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20241108022821_InitialCreate")]
+    [Migration("20241108030822_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -59,6 +59,10 @@ namespace CacaoDuarteAPI.Migrations
                     b.Property<int>("IdTipoCacao")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("PrecioPorQuintal")
                         .HasColumnType("REAL");
 
@@ -98,7 +102,7 @@ namespace CacaoDuarteAPI.Migrations
                         .IsRequired();
 
                     b.HasOne("CacaoDuarteAPI.Models.TiposCacao", "TiposCacao")
-                        .WithMany()
+                        .WithMany("PrecioCacao")
                         .HasForeignKey("IdTipoCacao")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -106,6 +110,11 @@ namespace CacaoDuarteAPI.Migrations
                     b.Navigation("EmpresaCompraCacao");
 
                     b.Navigation("TiposCacao");
+                });
+
+            modelBuilder.Entity("CacaoDuarteAPI.Models.TiposCacao", b =>
+                {
+                    b.Navigation("PrecioCacao");
                 });
 #pragma warning restore 612, 618
         }
