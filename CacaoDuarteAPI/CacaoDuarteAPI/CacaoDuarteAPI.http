@@ -1,0 +1,6 @@
+@CacaoDuarteAPI_HostAddress = http://localhost:5170
+
+GET {{CacaoDuarteAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
