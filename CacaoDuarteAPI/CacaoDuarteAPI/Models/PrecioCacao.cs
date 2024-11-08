@@ -10,6 +10,9 @@ namespace CacaoDuarteAPI.Models
         public int IdTipoCacao { get; set; }
         public int IdEmpresaCompraCacao { get; set; }
         public DateTime Fecha { get; set; }
+        public double PrecioPorQuintal { get; set; }
+        public double PrecioPorKg => PrecioPorQuintal / 100;
+
         [ForeignKey(nameof(IdTipoCacao))]
         public TiposCacao TiposCacao { get; set; }
         [ForeignKey(nameof(IdEmpresaCompraCacao))]
