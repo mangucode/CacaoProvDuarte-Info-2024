@@ -9,6 +9,7 @@ namespace CacaoDuarteAPI.Models
         public int Id { get; set; }
         public int IdTipoCacao { get; set; }
         public int IdEmpresaCompraCacao { get; set; }
+        public string Nombre { get; set; }
         public DateTime Fecha { get; set; }
         public double PrecioPorQuintal { get; set; }
         public double PrecioPorKg => PrecioPorQuintal / 100;
