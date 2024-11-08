@@ -14,9 +14,9 @@ namespace CacaoDuarteAPI.Models
         public double PrecioPorKg => PrecioPorQuintal / 100;
 
         [ForeignKey(nameof(IdTipoCacao))]
-        public TiposCacao TiposCacao { get; set; }
+        public TiposCacao? TiposCacao { get; set; }
         [ForeignKey(nameof(IdEmpresaCompraCacao))]
-        public EmpresaCompraCacao EmpresaCompraCacao { get; set; }
+        public EmpresaCompraCacao? EmpresaCompraCacao { get; set; }
 
     }
 }
