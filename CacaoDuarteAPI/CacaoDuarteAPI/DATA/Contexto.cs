@@ -7,9 +7,9 @@ namespace CacaoDuarteAPI.DATA
     {
         public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
-        DbSet<EmpresaCompraCacao>  EmpresaCompraCacaos { get; set; }    
-        DbSet<PrecioCacao> PreciosCacaos { get; set; }
-        DbSet<TiposCacao> TiposCacaos { get; set;}
+        public DbSet<EmpresaCompraCacao>  EmpresaCompraCacaos { get; set; }    
+        public DbSet<PrecioCacao> PreciosCacaos { get; set; }
+        public DbSet<TiposCacao> TiposCacaos { get; set;}
 
     }
 }
